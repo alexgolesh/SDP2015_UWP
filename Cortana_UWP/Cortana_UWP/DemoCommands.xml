@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="DemoCommandSet_en-us">
+    <CommandPrefix> Cortana Demo, </CommandPrefix>
+    <Example> Show my sessions in Tel-Aviv </Example>
+
+    <Command Name="showSessionsInDestination">
+      <Example> show my sessions in Tel-Aviv </Example>
+      <ListenFor> show [my] sessions in  {destination} </ListenFor>
+      <Feedback> Showing sessions in {destination} </Feedback>
+      <Navigate/>
+    </Command>
+
+    <Command Name="whenIsMySessionInDestination">
+      <Example> When is my session in Tel-Aviv?</Example>
+      <ListenFor> when is [my] session in {destination} </ListenFor>
+      <Feedback> Looking for session in {destination} </Feedback>
+      <VoiceCommandService Target="VoiceService"/>
+    </Command>
+
+    <Command Name="canceSessionInDestination">
+      <Example> Cancel my session in Tel-Aviv</Example>
+      <ListenFor> cancel [my] session in {destination} </ListenFor>
+      <Feedback> Cancelling session in {destination} </Feedback>
+      <VoiceCommandService Target="VoiceService"/>
+    </Command>
+
+    <Command Name="canceFlightToDestination">
+      <Example> Cancel my flight to Tel-Aviv</Example>
+      <ListenFor> cancel [my] flight to {destination} </ListenFor>
+      <Feedback> Cancelling flight to {destination} </Feedback>
+      <VoiceCommandService Target="VoiceService"/>
+    </Command>
+    
+    <PhraseList Label="destination">
+      <Item> Tel-Aviv </Item>
+      <Item> London </Item>
+      <Item> New York </Item>
+    </PhraseList>
+  </CommandSet>
+</VoiceCommands>

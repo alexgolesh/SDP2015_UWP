@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="ProtocolAndService_UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProtocolAndService_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel>
+            <Button Content="Execute protocol #1 without arguments" HorizontalAlignment="Center" Click="CallProtocol1"/>
+            <Button Content="Execute protocol #2 without arguments" HorizontalAlignment="Center" Click="CallProtocol2"/>
+            <Button Content="Execute protocol #2 with arguments" HorizontalAlignment="Center" Click="CallProtocol2a"/>
+            <Button Content="Execute protocol #3 with arguments" HorizontalAlignment="Center" Click="CallProtocol3"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <Button Content="Execute service ADD" HorizontalAlignment="Center" Click="CallService1" x:Name="btn1"/>
+            <Button Content="Execute service SUB" HorizontalAlignment="Center" Click="CallService2" x:Name="btn2"/>
+            <Button Content="Execute service MUL" HorizontalAlignment="Center" Click="CallService3" x:Name="btn3"/>
+            <Button Content="Execute service DIV" HorizontalAlignment="Center" Click="CallService4" x:Name="btn4"/>
+            <Button Content="Execute non existent service" HorizontalAlignment="Center" Click="CallService5" x:Name="btn5"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

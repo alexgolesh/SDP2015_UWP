@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="ActionCenter_WUP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ActionCenter_WUP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Text tile" HorizontalAlignment="Center" Click="CreateTextTile"/>
+            <Button Content="Image tile" HorizontalAlignment="Center" Click="CreateImageTile"/>
+            <Button Content="Grouped tile" HorizontalAlignment="Center" Click="CreateGrouppedTile"/>
+            <Button Content="Background on tile" HorizontalAlignment="Center" Click="CreateBackgroundTile"/>
+            <Button Content="Peek tile" HorizontalAlignment="Center" Click="CreatePeekTile"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+            <Button Content="Simple toast" HorizontalAlignment="Center" Click="CreateTextToast"/>
+            <Button Content="Action toast" HorizontalAlignment="Center" Click="CreateActionToast"/>
+            <Button Content="Input toast" HorizontalAlignment="Center" Click="CreateInputToast"/>
+            <Button Content="Selection input toast" HorizontalAlignment="Center" Click="CreateSelectionToast"/>
+        </StackPanel>
+        
+        <HyperlinkButton Grid.Row="2"
+                         Content="More info on Tiles" Margin="5"
+                         NavigateUri="http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/06/30/adaptive-tile-templates-schema-and-documentation.aspx"/>
+        <HyperlinkButton Grid.Row="3"
+                         Content="More info on Action Center notifications" Margin="5"
+                         NavigateUri="http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/07/02/adaptive-and-interactive-toast-notifications-for-windows-10.aspx"/>
+    </Grid>
+</Page>

@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="XAMLPerf_UWP.Pages.DefferedLoadingDemoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XAMLPerf_UWP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:myControl="using:XAMLPerf_UWP.Presentation"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer Style="{StaticResource PageScrollViewerStyle}">
+            <StackPanel>
+                <TextBlock Text="Deffered Loading" Style="{StaticResource TitleTextBlockStyle}" />
+
+                <myControl:MySpecialGrid x:Name="my1" x:DeferLoadStrategy="Lazy" Background="Red"/>
+                <!--Visibility="Collapsed" Opacity="0"-->
+                <myControl:MySpecialGrid x:Name="my2" x:DeferLoadStrategy="Lazy" Background="Black"/>
+                <myControl:MySpecialGrid x:Name="my3" x:DeferLoadStrategy="Lazy" Background="Yellow"/>
+                <myControl:MySpecialGrid x:Name="my4" x:DeferLoadStrategy="Lazy" Background="Green"/>
+                <myControl:MySpecialGrid x:Name="my5" Tapped="my5_Tapped"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

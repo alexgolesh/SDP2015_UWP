@@ -1,0 +1,1 @@
+C:\Users\alexg\Documents\Presentations\SDP 2015\UWP Long\Democode\Hello_UWP\Hello_UWP\Hello_UWP.csproj;x86

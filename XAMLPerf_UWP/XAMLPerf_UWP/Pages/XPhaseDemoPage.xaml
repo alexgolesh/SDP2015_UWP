@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="XAMLPerf_UWP.Pages.XPhaseDemoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XAMLPerf_UWP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:XAMLPerf_UWP.Model"
+    xmlns:converters="using:XAMLPerf_UWP.Converters"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <converters:StringToBrushConverter x:Key="StringToBrushConverter"/>
+    </Page.Resources>
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer Style="{StaticResource PageScrollViewerStyle}">
+            <StackPanel>
+                <TextBlock Text="x:Phase" Style="{StaticResource TitleTextBlockStyle}" />
+                <ListView Header="Items" ItemsSource="{x:Bind ViewModel.Items}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="vm:TodoItem">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{x:Bind Title}" Grid.Row="0" FontWeight="SemiBold"/>
+                                <TextBlock Text="{x:Bind Body}" Grid.Row="1"/>
+                                <Rectangle Width="100" Height="25" Grid.Row="2" Fill="{x:Bind Color, Converter={StaticResource StringToBrushConverter}}" 
+                                           x:Phase="2"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
